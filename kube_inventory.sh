@@ -11,4 +11,4 @@ done
     sed -i '/^\[etcd\]/,+3 s/^#//' kubespray/inventory/sample/inventory.ini
     sed -i '/^\[kube_node\]/,+5 {/node[45]/ s/^#//}' kubespray/inventory/sample/inventory.ini
     echo -e "\n[privilege_escalation]\nbecome = True\nbecome_method = sudo\nbecome_user = root\nbecome_ask_pass=False" | sudo tee -a kubespray/ansible.cfg
-    echo "ansible-playbook -i inventory/sample/inventory.ini -u vagrant -k -b cluster.yml"
+    echo "ansible-playbook -i inventory/sample/inventory.ini -u vagrant -k -b kubespray/cluster.yml"
